@@ -1,0 +1,62 @@
+CLI OS メモ
+概要
+このCLI OSは、基本的なファイル操作やユーザー管理機能を提供する仮想的なオペレーティングシステムです。以下のコマンドを使って、ファイルの操作やディレクトリの管理、ユーザー管理を行うことができます。
+
+基本的な使い方
+起動: python cli_os.pyでCLI OSを起動します。
+コマンドプロンプト: コマンドはプロンプト（>>>）に入力します。
+コマンド一覧
+ディレクトリ操作
+mkdir <dirname>: 指定した名前のディレクトリを作成します。
+例: mkdir mydir
+cd <dirname>: 指定したディレクトリに移動します。cd ..で親ディレクトリに移動します。
+例: cd mydir
+pwd: 現在の作業ディレクトリを表示します。
+例: pwd
+ls: 現在のディレクトリ内のファイルとサブディレクトリをリスト表示します。
+例: ls
+ファイル操作
+wget <url>: 指定されたURLからファイルをダウンロードし、現在の作業ディレクトリに保存します。
+例: wget http://example.com/file.txt
+rm <filename>: 指定されたファイルを削除します。
+例: rm file.txt
+mv <src> <dest>: srcという名前のファイルをdestという名前に変更します（または移動します）。
+例: mv oldname.txt newname.txt
+ユーザー管理
+adduser <id> <password>: 新しいユーザを追加します。
+例: adduser testuser testpass
+deluser <id>: 指定されたユーザを削除します。
+例: deluser testuser
+listusers: 現在のユーザ一覧を表示します。
+例: listusers
+login <id> <password>: 指定されたIDとパスワードでログインします。
+例: login testuser testpass
+logout: 現在ログインしているユーザをログアウトします。
+例: logout
+whoami: 現在ログインしているユーザ名を表示します。
+例: whoami
+コマンドの追加方法
+コマンドの実装:
+
+cli_os.pyに新しいコマンドの実装を追加します。コマンドに対応する関数を定義し、execute_command関数に処理を追加します。
+コマンドの実装例:
+
+```
+def new_command():
+    # 新しいコマンドの処理をここに追加
+    pass
+
+def execute_command(command):
+    # 既存のコマンドの処理
+    if cmd == "newcommand":
+        new_command()
+```
+コマンドの説明追加:
+
+memo.txtやCLI OSのヘルプメッセージに、新しいコマンドの説明を追加します。
+テスト:
+
+新しいコマンドを追加したら、CLI OSを再起動し、コマンドが正しく動作するかを確認します。
+注意事項
+コマンドを追加する際は、既存のコマンドとの重複や競合がないか確認してください。
+ユーザー管理機能を使用する場合は、users.jsonファイルが正しく設定されていることを確認してください。
